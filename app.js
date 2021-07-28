@@ -10,6 +10,7 @@ function getAdvice() {
   xhr.onload = function() {
     if(this.status == 200) {
       let response = JSON.parse(this.responseText);
+      console.log(this.responseText);
       if (count == 0) {
         count++;
         let advice =  document.createElement("div");
@@ -22,6 +23,5 @@ function getAdvice() {
       }
     }
   }
-  console.log(xhr)
   xhr.send();
 }

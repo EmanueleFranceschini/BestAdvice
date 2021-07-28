@@ -40,24 +40,56 @@ header {
 }
 
 #heading {
-  font-size: 6vmin;
+  font-size: 8vmin;
   margin: 0 2vmax;
 }
 
 #intro {
-  font-size: 5vmin;
-  line-height: 5vmin;
-  margin: 10vmax 4vmax 0;
+  margin-top: 6vmax;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 2vmax;
+}
+
+i {
+  font-size: 6vmin;
+  margin-right: 6px;
+}
+
+.far fa-thumbs-up {
+  background-color: black;
 }
 
 #btn-label {
-  font-size: 5vmin;
-  margin-top: 10vmax;
+  font-size: 6vmin;
+  margin-top: 8vmax;
   display: block;
 }
 
 #btn {
+  font-size: 6vmin;
+  font-weight: bold;
+  font-family: 'Itim', cursive;
   margin-top: 2vmax;
+  padding: 1.4vmin;
+  background-color: transparent;
+  border: solid;
+  border-width: 0.8vmin;
+  border-radius: 30px;
+  box-shadow: 0 5px rgb(128, 128, 128);
+}
+
+#btn:active {
+  box-shadow: 0 2px rgb(128, 128, 128);
+  transform: translateY(2px);
+}
+
+.fas.fa-lightbulb{
+  font-size: 6vmin;
+  margin-right: 0;
+  pointer-events: none;
 }
 
 .advice {
