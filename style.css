@@ -1,101 +1,190 @@
+:root {
+  --main-font: 'Neucha', cursive;
+  --main-font-size: calc(14px + 0.5vw);
+  --logo-title-size: calc(16px + 2vmax);
+  --intro-btn-marginTop: 9.5vmax;
+  --icon-margin: 2vmax;
+  --center-align: center;
+  --backgroundCol: rgba(255, 255, 255, 0.7);
+  --background2: url("images/background2.jpg");
+  --lightbulbCol: rgb(255, 200, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-  height: 100vh;
+html, body {
+  height: 100%;
 }
 
 header {
   height: 10%;
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: var(--center-align);
+  align-items: var(--center-align);
 }
 
 #logo {
-  height: 27px;
-  margin-right: 1.5vmin;
-  margin-bottom: 2px;
+  height: var(--logo-title-size);
+  margin-right: 0.6vmax;
+  margin-bottom: 5px;
 }
 
 #title {
-  font-size: 30px;
+  font-size: var(--logo-title-size);
   font-family: "Annie Use Your Telescope", "Brush Script MT", cursive;
-  }
+}
 
 #main-content {
   height: 90%;
+  width: 100%;
   box-sizing: border-box;
-  padding-top: 8vmax;
-  text-align: center;
-  background: url("background.jpg"), rgba(255, 255, 255, 0.5);
+  padding: 5.5vmax 4vmax 0 4vmax;
+  background: url("images/background.jpg"), rgba(255, 255, 255, 0.5);
   background-blend-mode: overlay;
-  background-position: center;
+  background-position: var(--center-align);
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Itim', cursive;
+  font-family: var(--main-font);
+  text-align: var(--center-align);
 }
 
 #heading {
-  font-size: 8vmin;
-  margin: 0 2vmax;
+  font-size: calc(15px + 2.5vw);
+  text-align: var(--center-align);
 }
 
 #intro {
-  margin-top: 6vmax;
-  text-align: left;
+  font-size: var(--main-font-size);
+  font-weight: bold;
+  margin-top: var(--intro-btn-marginTop);
+  text-align: var(--center-align);
+  display: inline-block;
 }
 
-li {
-  margin-bottom: 2vmax;
+p:not(.advice) {
+  padding: 1.5vmax;
+  margin-bottom: 3vmax;
+  border-radius: 2vmax;
+  text-align: var(--center-align);
+  background-color: var(--backgroundCol);
 }
 
-i {
-  font-size: 6vmin;
-  margin-right: 6px;
+p:nth-child(3) {
+  margin-bottom: 0;
 }
 
-.far fa-thumbs-up {
-  background-color: black;
+.first {
+  margin-top: 1px;
+  margin-right: var(--icon-margin);
+  float: left;
 }
 
-#btn-label {
-  font-size: 6vmin;
-  margin-top: 8vmax;
-  display: block;
+.second {
+  margin-top: 1px;
+  margin-left: var(--icon-margin);
+  float: right;
 }
 
 #btn {
-  font-size: 6vmin;
+  height: auto;
+  font-size: var(--main-font-size);
   font-weight: bold;
-  font-family: 'Itim', cursive;
-  margin-top: 2vmax;
-  padding: 1.4vmin;
-  background-color: transparent;
+  font-family: var(--main-font);
+  margin: var(--intro-btn-marginTop) auto 0 auto;
+  padding: 1.3vmax;
   border: solid;
-  border-width: 0.8vmin;
-  border-radius: 30px;
-  box-shadow: 0 5px rgb(128, 128, 128);
+  border-width: 2.8px;
+  border-radius: 25px;
+  background-color: var(--backgroundCol);
+  display: block;
+  cursor: pointer;
 }
 
-#btn:active {
-  box-shadow: 0 2px rgb(128, 128, 128);
-  transform: translateY(2px);
-}
-
-.fas.fa-lightbulb{
-  font-size: 6vmin;
-  margin-right: 0;
-  pointer-events: none;
+.fas.fa-lightbulb {
+  font-size: var(--main-font-size);
+  color: var(--lightbulbCol);
 }
 
 .advice {
-  font-size: 6vmin;
-  font-family: 'Caveat', cursive;
-  margin-top: 7vmax;
-  padding: 2vmin;
-  background-color: rgba(255, 255, 255, 0.5)
+  font-size: var(--main-font-size);
+  font-family: 'Indie Flower', cursive;
+  font-weight: 600;
+  margin: 2.5vmax auto 0 auto;
+  padding: 1.5vmax;
+  border-radius: 2vmax;
+  background-color: var(--backgroundCol);
+  text-align: var(--center-align);
+  display: inline-block;
+}
+
+@keyframes adviceAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+    border: solid 2.8px var(--lightbulbCol);
+  }
+}
+
+.fas.fa-quote-left {
+  font-size: var(--main-font-size);
+  margin-right: 0.5vmax;
+}
+
+@media screen and (min-width: 700px) {
+  :root {
+    --intro-btn-marginTop: 6vmax;
+  }
+
+  #main-content {
+    padding-top: 4vmax;
+    background: var(--background2), rgba(255, 255, 255, 0.55);
+    background-blend-mode: overlay;
+    background-position: var(--center-align);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #intro {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  p:not(.advice) {
+    margin-bottom: 0;
+    padding: 1.5vmax;
+    background-color: var(--backgroundCol);
+    border-style: none;
+    border-width: 2.5px;
+    border-radius: 25px;
+    text-align: var(--center-align);
+  }
+
+  .first {
+    font-size: calc(16px + 1.5vw);
+    margin-bottom: 1vmax;
+    margin-right: 0;
+    float: none;
+    display: block;
+  }
+
+  .second {
+    display: none;
+  }
+
+  #btn {
+    border-width: 3px;
+    background-color: var(--backgroundCol);
+  }
+
+  .advice {
+    margin-top: 1vmax;
+    background-color: var(--backgroundCol);
+  }
 }
