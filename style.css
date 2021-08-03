@@ -175,7 +175,7 @@ p:nth-child(3) {
   }
 
   .second {
-    display: none;
+    display: none !important;
   }
 
   #btn {
